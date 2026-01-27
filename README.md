@@ -1,6 +1,11 @@
 <div align="center">
+  
 ​SHIKKHA SOMAPONI UTSHOB 45
+
+​www.ju45th.com
+
 ​Jahangirnagar University | Batch 45 | Rag Day
+
 ​"Have a Cherish and Have it."
 
   🌐 LAUNCH SITE  📁 ALUMNI DIRECTORY  🧠 AI NEXUS  📜 MANIFESTO
