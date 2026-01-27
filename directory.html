@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directory - JU 45</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { ju: { red: '#C64136', gold: '#D4AF37', cream: '#F9F7F2', charcoal: '#1F2937' } } } }
+        }
+    </script>
+</head>
+<body class="bg-ju-cream text-ju-charcoal font-sans">
+
+    <nav class="bg-ju-charcoal text-white py-4 px-6 shadow-md">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="font-serif text-2xl text-ju-gold">JU 45</a>
+            <a href="index.html" class="text-xs uppercase tracking-widest hover:text-ju-gold">Back to Home</a>
+        </div>
+    </nav>
+
+    <header class="py-16 text-center px-4 bg-white border-b border-gray-100">
+        <h1 class="font-serif text-4xl md:text-5xl font-bold text-ju-charcoal mb-4">Batch Directory</h1>
+        <p class="text-gray-500 text-sm max-w-xl mx-auto">Find your friends, connect with professionals, or search for blood donors within the 45th batch family.</p>
+        
+        <div class="mt-8 max-w-md mx-auto relative">
+            <input type="text" placeholder="Search by name, dept, or blood group..." class="w-full pl-12 pr-4 py-3 rounded-full border border-gray-300 focus:border-ju-gold focus:ring-2 focus:ring-ju-gold/20 outline-none transition-all">
+            <i class="fas fa-search absolute left-5 top-1/2 -translate-y-1/2 text-gray-400"></i>
+        </div>
+    </header>
+
+    <section class="max-w-7xl mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg border border-gray-100 transition-all group">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="User">
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-ju-charcoal group-hover:text-ju-red transition-colors">Tanvir Ahmed</h3>
+                        <p class="text-xs text-gray-500 uppercase tracking-wider">Philosophy • 45</p>
+                    </div>
+                </div>
+                <div class="space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-briefcase text-ju-gold w-5"></i> Software Engineer</p>
+                    <p><i class="fas fa-tint text-ju-red w-5"></i> B+ (Blood Donor)</p>
+                    <p><i class="fas fa-map-marker-alt text-gray-400 w-5"></i> Dhaka, Bangladesh</p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center">
+                    <span class="inline-block px-2 py-1 bg-green-100 text-green-700 text-[10px] font-bold rounded">VERIFIED</span>
+                    <button class="text-ju-red hover:text-ju-charcoal text-xs font-bold uppercase">Connect</button>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg border border-gray-100 transition-all group">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" alt="User">
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-ju-charcoal group-hover:text-ju-red transition-colors">Nusrat Jahan</h3>
+                        <p class="text-xs text-gray-500 uppercase tracking-wider">English • 45</p>
+                    </div>
+                </div>
+                <div class="space-y-2 text-sm text-gray-600">
+                    <p><i class="fas fa-briefcase text-ju-gold w-5"></i> Lecturer</p>
+                    <p><i class="fas fa-tint text-ju-red w-5"></i> O+ (Blood Donor)</p>
+                    <p><i class="fas fa-map-marker-alt text-gray-400 w-5"></i> Chittagong</p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center">
+                    <span class="inline-block px-2 py-1 bg-green-100 text-green-700 text-[10px] font-bold rounded">VERIFIED</span>
+                    <button class="text-ju-red hover:text-ju-charcoal text-xs font-bold uppercase">Connect</button>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-xl flex flex-col items-center justify-center p-8 text-center">
+                <i class="fas fa-user-plus text-3xl text-gray-400 mb-2"></i>
+                <h3 class="font-bold text-gray-600">Join the Directory</h3>
+                <p class="text-xs text-gray-500 mb-4">Create your profile to be visible.</p>
+                <a href="login.html" class="px-4 py-2 bg-ju-charcoal text-white text-xs font-bold rounded hover:bg-ju-gold transition-colors">REGISTER NOW</a>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>

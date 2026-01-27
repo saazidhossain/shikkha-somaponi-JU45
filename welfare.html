@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welfare Fund - JU 45</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { ju: { red: '#C64136', gold: '#D4AF37', cream: '#F9F7F2', charcoal: '#1F2937' } } } }
+        }
+    </script>
+</head>
+<body class="bg-ju-cream text-ju-charcoal font-sans">
+
+    <nav class="bg-ju-charcoal text-white py-4 px-6 shadow-md">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="font-serif text-2xl text-ju-gold">JU 45</a>
+            <a href="index.html" class="text-xs uppercase tracking-widest hover:text-ju-gold">Back to Home</a>
+        </div>
+    </nav>
+
+    <header class="py-20 text-center px-4 bg-white">
+        <span class="text-ju-gold font-bold tracking-widest text-xs uppercase mb-2 block">Friends for Friends</span>
+        <h1 class="font-serif text-5xl md:text-6xl font-bold text-ju-charcoal mb-6">Welfare Fund</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Life is unpredictable. We have established this fund to stand by our batchmates during medical emergencies and critical life crises. Transparency is our core value.
+        </p>
+    </header>
+
+    <section class="max-w-5xl mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            <div class="bg-ju-charcoal text-white p-8 rounded-2xl text-center">
+                <h3 class="text-4xl font-bold text-ju-gold">৳ 0.00</h3>
+                <p class="text-xs uppercase tracking-widest mt-2 opacity-70">Current Balance</p>
+            </div>
+            <div class="bg-white border border-gray-100 p-8 rounded-2xl text-center shadow-sm">
+                <h3 class="text-4xl font-bold text-ju-charcoal">0</h3>
+                <p class="text-xs uppercase tracking-widest mt-2 text-gray-500">Families Supported</p>
+            </div>
+            <div class="bg-white border border-gray-100 p-8 rounded-2xl text-center shadow-sm">
+                <h3 class="text-4xl font-bold text-ju-charcoal">0</h3>
+                <p class="text-xs uppercase tracking-widest mt-2 text-gray-500">Active Donors</p>
+            </div>
+        </div>
+
+        <div class="bg-white p-10 rounded-2xl shadow-lg border border-ju-gold/20 text-center">
+            <h2 class="font-serif text-3xl font-bold mb-8">Make a Contribution</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-6 bg-pink-50 rounded-xl border border-pink-100">
+                    <h3 class="font-bold text-pink-600 mb-2">bKash (Personal)</h3>
+                    <p class="text-2xl font-mono text-gray-800">01X XXX XXXX</p>
+                    <p class="text-xs text-gray-500 mt-2">Ref: JU45 Donation</p>
+                </div>
+                <div class="p-6 bg-orange-50 rounded-xl border border-orange-100">
+                    <h3 class="font-bold text-orange-600 mb-2">Nagad (Personal)</h3>
+                    <p class="text-2xl font-mono text-gray-800">01X XXX XXXX</p>
+                    <p class="text-xs text-gray-500 mt-2">Ref: JU45 Donation</p>
+                </div>
+            </div>
+            <p class="mt-8 text-sm text-gray-500">After sending money, please <a href="#" class="text-ju-red font-bold underline">fill this form</a> to get a receipt.</p>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-8 text-center text-xs tracking-widest uppercase mt-12">
+        <p>&copy; 2026 JU 45 Welfare Committee.</p>
+    </footer>
+</body>
+</html>

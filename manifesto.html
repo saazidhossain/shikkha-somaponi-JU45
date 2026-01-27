@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manifesto - JU 45</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600&family=Noto+Serif+Bengali:wght@400;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = { theme: { extend: { colors: { ju: { red: '#C64136', gold: '#D4AF37', cream: '#F9F7F2', charcoal: '#1F2937' } }, fontFamily: { serif: ['Playfair Display', 'serif'], calligraphy: ['Great Vibes', 'cursive'], bangla: ['Noto Serif Bengali', 'serif'] } } } }
+    </script>
+</head>
+<body class="bg-ju-cream text-ju-charcoal">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-ju-charcoal/95 backdrop-blur-xl text-white py-3 px-6 shadow-md">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="bg-white p-1 rounded-lg border border-ju-gold shadow-lg">
+                    <img src="favicon.png" onerror="this.src='https://placehold.co/40x40?text=JU45'" class="h-8 w-8 object-contain">
+                </div>
+                <span class="font-calligraphy text-2xl md:text-3xl text-ju-gold">JU 45</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-6 text-[11px] uppercase tracking-[0.2em] font-medium text-gray-300">
+                <a href="index.html" class="hover:text-ju-gold transition-all">Home</a>
+                <a href="manifesto.html" class="text-white border-b border-ju-gold pb-1">Manifesto</a>
+                <a href="memories.php" class="hover:text-ju-gold transition-all">Gallery</a>
+                <a href="ai-tools.html" class="hover:text-ju-gold transition-all">AI Tools</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-ju-gold focus:outline-none"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-gray-900/98 z-[60] transform translate-x-full transition-transform duration-300 md:hidden flex flex-col justify-center items-center space-y-8 backdrop-blur-lg">
+        <button id="close-menu-btn" class="absolute top-6 right-6 text-white text-4xl hover:text-ju-red"><i class="fas fa-times"></i></button>
+        <a href="index.html" class="text-2xl text-white font-serif hover:text-ju-gold tracking-widest">HOME</a>
+        <a href="manifesto.html" class="text-2xl text-white font-serif hover:text-ju-gold tracking-widest">MANIFESTO</a>
+        <a href="memories.php" class="text-2xl text-white font-serif hover:text-ju-gold tracking-widest">GALLERY</a>
+    </div>
+
+    <section class="pt-32 pb-20 px-6 max-w-4xl mx-auto min-h-screen">
+        <div class="text-center mb-16" data-aos="fade-down">
+            <h1 class="font-serif text-5xl md:text-6xl font-bold text-ju-charcoal mb-4">The 45th Legacy</h1>
+            <div class="w-24 h-1 bg-ju-gold mx-auto"></div>
+        </div>
+
+        <div class="prose prose-lg md:prose-xl mx-auto text-ju-charcoal/90 font-serif leading-loose text-justify px-4">
+            <p data-aos="fade-up" class="first-letter:text-6xl first-letter:font-calligraphy first-letter:text-ju-red first-letter:mr-3 first-letter:float-left">
+                We walked the red paths of Jahangirnagar when the winter mist blurred the lines between reality and dreams. We are the 45th batch—a collection of souls bound not just by an academic calendar, but by the shared rhythm of life at the "Capital of Culture."
+            </p>
+            
+            <div class="my-16 p-8 md:p-12 bg-white shadow-xl border-l-4 border-ju-red rounded-r-xl relative overflow-hidden" data-aos="zoom-in">
+                <div class="absolute -right-10 -bottom-10 opacity-5 text-9xl text-ju-red"><i class="fas fa-quote-right"></i></div>
+                <p class="font-bangla text-2xl md:text-3xl text-center italic text-gray-800 leading-relaxed relative z-10">
+                    "আমাদের এই বন্ধন কেবল স্মৃতির জাবর কাটা নয়, বরং একে অপরের পাশে দাঁড়াবার এক অটুট প্রতিশ্রুতি।"
+                </p>
+            </div>
+
+            <p data-aos="fade-up" class="pb-6">
+                From the chaotic debates at Bot-tola to the serene silence of the lakes, our journey was painted in the hues of brick-red and leaf-green. We learned that brotherhood isn't about agreeing on everything; it's about standing together when it counts.
+            </p>
+            <p data-aos="fade-up" class="pb-20">
+                Today, as we navigate the complexities of professional life across the globe, the need for a unified platform has never been stronger. This portal is our digital home—a place to archive our history, fuel our career growth, and extend a hand of welfare to those among us in need. Established in 2016, we remain, forever 45.
+            </p>
+        </div>
+        
+        <div class="mt-10 text-center border-t border-gray-200 pt-10" data-aos="fade-up">
+            <span class="font-calligraphy text-4xl text-gray-400">Founding Committee</span>
+        </div>
+    </section>
+
+    <!-- NEW: Ask the Archives Section (Gemini API) -->
+    <section class="py-20 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-3xl mx-auto px-6 text-center" data-aos="fade-up">
+            <div class="mb-8">
+                <span class="inline-block py-1 px-3 rounded-full bg-ju-gold/10 text-yellow-700 text-[10px] font-bold tracking-widest uppercase mb-3 border border-ju-gold/20">Gemini Powered</span>
+                <h2 class="font-serif text-3xl font-bold text-ju-charcoal">Ask the Archives</h2>
+                <p class="text-gray-500 text-sm mt-2 font-serif italic">Curious about our history? Ask the AI historian.</p>
+            </div>
+
+            <div class="bg-white p-2 rounded-full shadow-lg border border-gray-100 flex items-center max-w-lg mx-auto mb-8 transition-shadow focus-within:shadow-xl">
+                <input id="archive-query" type="text" placeholder="e.g. What defines the 45th batch?" class="flex-1 px-6 py-3 rounded-full outline-none text-sm text-gray-700 placeholder-gray-400 bg-transparent font-sans">
+                <button onclick="askLegacy()" class="w-12 h-12 bg-ju-charcoal text-white rounded-full flex items-center justify-center hover:bg-ju-red transition-all transform hover:scale-105 shadow-md">
+                    <span class="text-lg">✨</span>
+                </button>
+            </div>
+
+            <!-- Loader -->
+            <div id="ai-loader" class="hidden flex justify-center items-center gap-2 mb-6">
+                <div class="w-2 h-2 bg-ju-gold rounded-full animate-bounce"></div>
+                <div class="w-2 h-2 bg-ju-gold rounded-full animate-bounce delay-100"></div>
+                <div class="w-2 h-2 bg-ju-gold rounded-full animate-bounce delay-200"></div>
+            </div>
+
+            <!-- Result -->
+            <div id="ai-response" class="hidden text-left bg-white p-8 rounded-2xl border border-ju-gold/20 shadow-lg relative max-w-2xl mx-auto">
+                <i class="fas fa-quote-left text-ju-gold/20 text-4xl absolute top-4 left-4"></i>
+                <p class="text-ju-charcoal font-serif text-lg leading-relaxed relative z-10 pl-6 border-l-2 border-ju-gold/50"></p>
+                <i class="fas fa-quote-right text-ju-gold/20 text-4xl absolute bottom-4 right-4"></i>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#0b0f19] text-white py-8 text-center text-xs tracking-widest uppercase mt-0 border-t border-gray-800">
+        <p>&copy; 2026 JU 45. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        function toggleMenu() { 
+            mobileMenu.classList.toggle('translate-x-full'); 
+            document.body.style.overflow = mobileMenu.classList.contains('translate-x-full') ? 'auto' : 'hidden'; 
+        }
+        if(menuBtn) menuBtn.addEventListener('click', toggleMenu);
+        if(closeMenuBtn) closeMenuBtn.addEventListener('click', toggleMenu);
+
+        // Gemini API Logic
+        const apiKey = ""; // Provided by system
+
+        async function askLegacy() {
+            const query = document.getElementById('archive-query').value;
+            const resultDiv = document.getElementById('ai-response');
+            const resultText = resultDiv.querySelector('p');
+            const loader = document.getElementById('ai-loader');
+
+            if (!query) {
+                alert("Please ask a question about our legacy!");
+                return;
+            }
+
+            // UI State
+            loader.classList.remove('hidden');
+            resultDiv.classList.add('hidden');
+
+            // Context from the manifesto text above
+            const context = `
+                We walked the red paths of Jahangirnagar when the winter mist blurred the lines between reality and dreams. We are the 45th batch—a collection of souls bound not just by an academic calendar, but by the shared rhythm of life at the "Capital of Culture."
+                From the chaotic debates at Bot-tola to the serene silence of the lakes, our journey was painted in the hues of brick-red and leaf-green. We learned that brotherhood isn't about agreeing on everything; it's about standing together when it counts.
+                Today, as we navigate the complexities of professional life across the globe, the need for a unified platform has never been stronger. This portal is our digital home—a place to archive our history, fuel our career growth, and extend a hand of welfare to those among us in need. Established in 2016, we remain, forever 45.
+            `;
+
+            const prompt = `You are the soulful AI historian for the JU 45th Batch. Answer this question based *only* on the manifesto text provided below. Keep the answer poetic, nostalgic, concise (under 50 words), and inspiring.
+            
+            Manifesto Context: "${context}"
+            
+            User Question: "${query}"`;
+
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+                });
+
+                const data = await response.json();
+                const text = data.candidates[0].content.parts[0].text;
+
+                // Simple markdown cleanup if any
+                resultText.innerText = text.replace(/\*/g, '');
+                resultDiv.classList.remove('hidden');
+            } catch (error) {
+                console.error(error);
+                alert("The archives are momentarily silent. Please try again later.");
+            } finally {
+                loader.classList.add('hidden');
+            }
+        }
+
+        // Allow Enter key to submit
+        document.getElementById('archive-query').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                askLegacy();
+            }
+        });
+    </script>
+</body>
+</html>

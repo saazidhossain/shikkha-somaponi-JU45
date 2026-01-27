@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JU 45 - The Official Portal</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600&family=Noto+Serif+Bengali:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { ju: { red: '#C64136', gold: '#D4AF37', cream: '#F9F7F2', charcoal: '#111827', green: '#2C5F2D' } },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'], calligraphy: ['Great Vibes', 'cursive'], bangla: ['Noto Serif Bengali', 'serif'] },
+                    backgroundImage: { 'hero-local': "url('images/hero.jpg')" }
+                }
+            }
+        }
+    </script>
+    <style>
+        .text-glow { text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); }
+        .text-gradient-gold {
+            background: linear-gradient(to right, #D4AF37, #FDE68A, #D4AF37);
+            -webkit-background-clip: text; background-clip: text; color: transparent;
+            background-size: 200% auto; animation: shine 5s linear infinite;
+        }
+        @keyframes shine { to { background-position: 200% center; } }
+        
+        /* Spinner for AI Loading */
+        .spinner {
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top: 3px solid #D4AF37;
+            width: 20px;
+            height: 20px;
+            -webkit-animation: spin 1s linear infinite; /* Safari */
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-ju-cream text-ju-charcoal font-sans antialiased overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-ju-charcoal/90 backdrop-blur-xl text-white py-3 px-6 shadow-2xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="favicon.png" onerror="this.style.display='none'" class="h-8 w-auto object-contain transition-transform group-hover:scale-110">
+                <span class="font-calligraphy text-2xl text-ju-gold">JU 45</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-6 text-[11px] uppercase tracking-[0.2em] font-medium text-gray-300">
+                <a href="#home" class="text-white border-b border-ju-gold pb-1">Home</a>
+                <a href="manifesto.html" class="hover:text-ju-gold transition-all">Manifesto</a>
+                <a href="memories.php" class="hover:text-ju-gold transition-all">Gallery</a>
+                <a href="#ai-nexus" class="hover:text-ju-gold transition-all text-ju-gold font-bold">AI Tools</a>
+                <a href="https://rag.ju45th.com" target="_blank" class="text-ju-red font-bold hover:text-white transition-all">RAG 45</a>
+                <a href="#" class="px-5 py-2 bg-ju-red text-white rounded-full hover:bg-red-700 transition-all shadow-lg shadow-ju-red/30">Login</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-ju-gold"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-gray-900/98 z-[60] transform translate-x-full transition-transform duration-300 md:hidden flex flex-col justify-center items-center space-y-8 backdrop-blur-lg">
+        <button id="close-menu-btn" class="absolute top-6 right-6 text-white text-4xl hover:text-ju-red"><i class="fas fa-times"></i></button>
+        <a href="#home" class="text-2xl text-white font-serif hover:text-ju-gold tracking-widest" onclick="toggleMenu()">HOME</a>
+        <a href="manifesto.html" class="text-2xl text-white font-serif hover:text-ju-gold tracking-widest">MANIFESTO</a>
+        <a href="memories.php" class="text-2xl text-white font-serif hover:text-ju-gold tracking-widest">GALLERY</a>
+        <a href="#ai-nexus" class="text-2xl text-ju-gold font-serif font-bold tracking-widest" onclick="toggleMenu()">AI TOOLS</a>
+        <a href="https://rag.ju45th.com" class="text-2xl text-ju-red font-bold tracking-widest">RAG 45</a>
+    </div>
+
+    <!-- Hero Section -->
+    <header id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-32">
+        <div class="absolute inset-0 bg-hero-local bg-cover bg-center transform scale-105 animate-[pulse_10s_ease-in-out_infinite]"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-gray-900/90 via-gray-900/50 to-ju-cream"></div>
+
+        <div class="relative z-10 text-center px-4 max-w-6xl mx-auto" data-aos="zoom-out" data-aos-duration="1200">
+            <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 hover:bg-white/20 transition-all cursor-default">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-ping"></span>
+                <span class="text-white text-[10px] uppercase tracking-widest">Official Portal Live</span>
+            </div>
+
+            <div class="flex flex-col gap-2 md:gap-6 mb-12">
+                <h2 class="font-bangla text-3xl md:text-5xl text-gray-200 font-medium tracking-wide text-glow opacity-90" data-aos="fade-up" data-aos-delay="200">
+                    উচ্ছ্বাসে আর ক্রন্দনে,
+                </h2>
+                
+                <h1 class="font-bangla text-5xl md:text-[5.5rem] lg:text-[7rem] leading-tight font-bold text-white text-glow" data-aos="fade-up" data-aos-delay="400">
+                    থাক <span class="text-gradient-gold inline-block transform hover:scale-105 transition-transform duration-500 cursor-pointer">পঁয়তাল্লিশ</span> বন্ধনে
+                </h1>
+                
+                <div class="mx-auto mt-6 w-24 h-1 bg-gradient-to-r from-transparent via-ju-red to-transparent rounded-full opacity-80"></div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-5 justify-center items-center" data-aos="fade-up" data-aos-delay="600">
+                <a href="#ai-nexus" class="px-8 py-4 bg-ju-red text-white font-bold tracking-widest text-xs rounded shadow-[0_10px_20px_rgba(198,65,54,0.3)] hover:bg-white hover:text-ju-red transition-all transform hover:-translate-y-1">
+                    TRY AI TOOLS
+                </a>
+                <a href="manifesto.html" class="px-8 py-4 border border-white/30 backdrop-blur-sm text-white font-bold tracking-widest text-xs rounded hover:bg-white hover:text-ju-charcoal transition-all">
+                    OUR LEGACY
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 animate-bounce">
+            <i class="fas fa-chevron-down text-xl"></i>
+        </div>
+    </header>
+
+    <!-- Stats Section -->
+    <section class="relative -mt-24 z-20 max-w-6xl mx-auto px-4" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div class="bg-white shadow-2xl rounded-2xl p-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-gray-100 border-b-4 border-ju-gold">
+            <div>
+                <h3 class="text-4xl font-serif text-ju-charcoal font-bold">2016</h3>
+                <p class="text-gray-400 text-[10px] uppercase tracking-widest mt-2">Established</p>
+            </div>
+            <div>
+                <h3 class="text-4xl font-serif text-ju-charcoal font-bold">2K+</h3>
+                <p class="text-gray-400 text-[10px] uppercase tracking-widest mt-2">Alumni</p>
+            </div>
+            <div>
+                <h3 class="text-4xl font-serif text-ju-charcoal font-bold">34</h3>
+                <p class="text-gray-400 text-[10px] uppercase tracking-widest mt-2">Depts</p>
+            </div>
+            <div>
+                <h3 class="text-4xl font-serif text-ju-charcoal font-bold">∞</h3>
+                <p class="text-gray-400 text-[10px] uppercase tracking-widest mt-2">Bond</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Identity Section -->
+    <section class="py-24 bg-ju-cream">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <span class="text-ju-red font-bold tracking-widest uppercase text-xs">Our Identity</span>
+                <h2 class="font-serif text-4xl md:text-5xl text-ju-charcoal font-bold mt-4 mb-6">More Than Just a Batch</h2>
+                <p class="text-gray-600 leading-loose mb-6 font-serif">
+                    We are the <span class="text-ju-red font-bold">45th Batch</span>. From the red bricks to the green lakes, our footprints are everywhere. This website serves as our digital headquarters.
+                </p>
+                <div class="pl-4 border-l-2 border-ju-gold">
+                    <p class="font-bangla text-xl italic text-gray-800">"সংস্কৃতির রাজধানীতে, আমরাই রাজা"</p>
+                </div>
+            </div>
+            <div class="relative" data-aos="zoom-in">
+                <div class="absolute inset-0 bg-ju-gold/20 transform translate-x-4 translate-y-4 rounded-xl"></div>
+                <img src="images/hero.jpg" onerror="this.src='https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=80'" class="relative rounded-xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 w-full object-cover h-[400px]">
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Nexus Section (New AI Features) -->
+    <section id="ai-nexus" class="py-24 bg-gradient-to-b from-white to-ju-cream border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-down">
+                <span class="inline-block py-1 px-4 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-800 text-[10px] font-bold tracking-widest uppercase mb-4 shadow-sm">Powered by Sazid's AI Studio</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-ju-charcoal">JU 45 Intelligence</h2>
+                <p class="mt-4 text-gray-500 font-light">Leveraging AI to reconnect our hearts and advance our community.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Feature 1: Memory Polisher -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl border border-ju-red/10 group hover:border-ju-red/30 transition-all" data-aos="fade-up">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-ju-red/5 rounded-xl flex items-center justify-center text-ju-red group-hover:scale-110 transition-transform"><i class="fas fa-feather-alt text-xl"></i></div>
+                        <h3 class="text-xl font-bold font-serif text-ju-charcoal">Memory Polisher</h3>
+                    </div>
+                    <p class="text-sm text-gray-500 mb-4 h-10">Describe a raw memory, get a poetic nostalgic caption.</p>
+                    <textarea id="memory-input" class="w-full p-3 bg-gray-50 rounded-lg border border-gray-100 text-sm focus:border-ju-red outline-none resize-none mb-4" rows="3" placeholder="e.g. Eating khichuri at Bottola in rain..."></textarea>
+                    <button onclick="callGeminiAPI('memory')" class="w-full py-3 bg-ju-charcoal text-white rounded-lg text-xs font-bold tracking-widest hover:bg-ju-red transition-colors flex justify-center items-center gap-2">
+                        <span>POLISH MEMORY ✨</span>
+                        <div id="loader-memory" class="spinner hidden"></div>
+                    </button>
+                    <div id="result-memory" class="mt-4 text-sm font-serif italic text-ju-charcoal hidden bg-ju-cream p-3 rounded border-l-2 border-ju-red"></div>
+                </div>
+
+                <!-- Feature 2: Event Wizard -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl border border-ju-gold/10 group hover:border-ju-gold/30 transition-all" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-ju-gold/5 rounded-xl flex items-center justify-center text-yellow-700 group-hover:scale-110 transition-transform"><i class="fas fa-magic text-xl"></i></div>
+                        <h3 class="text-xl font-bold font-serif text-ju-charcoal">Event Wizard</h3>
+                    </div>
+                    <p class="text-sm text-gray-500 mb-4 h-10">Plan a quick reunion. Enter vibe & location.</p>
+                    <input id="event-input" type="text" class="w-full p-3 bg-gray-50 rounded-lg border border-gray-100 text-sm focus:border-ju-gold outline-none mb-4" placeholder="e.g. Winter BBQ at Transport">
+                    <button onclick="callGeminiAPI('event')" class="w-full py-3 bg-ju-charcoal text-white rounded-lg text-xs font-bold tracking-widest hover:bg-ju-gold hover:text-white transition-colors flex justify-center items-center gap-2">
+                        <span>PLAN EVENT ✨</span>
+                        <div id="loader-event" class="spinner hidden"></div>
+                    </button>
+                    <div id="result-event" class="mt-4 text-sm font-sans text-gray-600 hidden bg-ju-cream p-3 rounded border-l-2 border-ju-gold whitespace-pre-line"></div>
+                </div>
+
+                <!-- Feature 3: The Bio-Smith -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl border border-ju-green/10 group hover:border-ju-green/30 transition-all" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-ju-green/5 rounded-xl flex items-center justify-center text-ju-green group-hover:scale-110 transition-transform"><i class="fas fa-id-card text-xl"></i></div>
+                        <h3 class="text-xl font-bold font-serif text-ju-charcoal">The Bio-Smith</h3>
+                    </div>
+                    <p class="text-sm text-gray-500 mb-4 h-10">Get a professional yet nostalgic bio for the directory.</p>
+                    <input id="bio-role" type="text" class="w-full p-3 bg-gray-50 rounded-lg border border-gray-100 text-sm focus:border-ju-green outline-none mb-2" placeholder="Your Role (e.g. Banker)">
+                    <button onclick="callGeminiAPI('bio')" class="w-full mt-2 py-3 bg-ju-charcoal text-white rounded-lg text-xs font-bold tracking-widest hover:bg-ju-green transition-colors flex justify-center items-center gap-2">
+                        <span>GENERATE BIO ✨</span>
+                        <div id="loader-bio" class="spinner hidden"></div>
+                    </button>
+                    <div id="result-bio" class="mt-4 text-sm font-sans text-gray-600 hidden bg-ju-cream p-3 rounded border-l-2 border-ju-green"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Top 1% Masterpiece Footer -->
+    <footer class="relative bg-[#050505] text-white pt-20 pb-10 overflow-hidden font-sans border-t border-white/5">
+        
+        <!-- Ambient Glow Effect (Background) -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-ju-gold/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16 border-b border-white/5 pb-12">
+                
+                <!-- Brand Section (Span 4 Cols) -->
+                <div class="md:col-span-4 space-y-6">
+                    <a href="index.html" class="flex items-center gap-3 group w-fit">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-ju-gold blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                            <div class="relative bg-white/5 border border-white/10 p-2 rounded-lg backdrop-blur-md">
+                                <img src="favicon.png" onerror="this.src='https://placehold.co/40?text=45'" class="h-8 w-8 object-contain opacity-90 grayscale group-hover:grayscale-0 transition-all duration-500">
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-calligraphy text-3xl text-ju-gold tracking-wide">JU 45</span>
+                            <span class="text-[9px] uppercase tracking-[0.3em] text-gray-500 font-medium">The Official Portal</span>
+                        </div>
+                    </a>
+                    <p class="text-gray-500 text-sm leading-7 pr-4 font-light">
+                        Bridging the gap between our glorious past and a promising future. The central nervous system for the 45th batch community.
+                    </p>
+                    <div class="flex items-center gap-2 text-xs font-mono text-green-500 bg-green-500/5 px-3 py-1 rounded-full w-fit border border-green-500/10">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                        </span>
+                        System Operational
+                    </div>
+                </div>
+
+                <!-- Sitemap: Core (Span 2 Cols) -->
+                <div class="md:col-span-2">
+                    <h4 class="text-white font-bold text-[10px] uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
+                        <span class="w-1 h-1 bg-ju-gold rounded-full"></span> Core
+                    </h4>
+                    <ul class="space-y-4 text-sm text-gray-400 font-medium">
+                        <li><a href="index.html" class="hover:text-ju-gold hover:pl-2 transition-all duration-300 block">Home</a></li>
+                        <li><a href="manifesto.html" class="hover:text-ju-gold hover:pl-2 transition-all duration-300 block">Manifesto</a></li>
+                        <li><a href="memories.php" class="hover:text-ju-gold hover:pl-2 transition-all duration-300 block">Golden Memories</a></li>
+                        <li><a href="directory.html" class="hover:text-ju-gold hover:pl-2 transition-all duration-300 block">Batch Directory</a></li>
+                    </ul>
+                </div>
+
+                <!-- Sitemap: Utility (Span 2 Cols) -->
+                <div class="md:col-span-2">
+                    <h4 class="text-white font-bold text-[10px] uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
+                        <span class="w-1 h-1 bg-ju-red rounded-full"></span> Utility
+                    </h4>
+                    <ul class="space-y-4 text-sm text-gray-400 font-medium">
+                        <li><a href="ai-tools.html" class="hover:text-white hover:pl-2 transition-all duration-300 block flex items-center gap-2"><i class="fas fa-magic text-xs"></i> AI Intelligence</a></li>
+                        <li><a href="welfare.html" class="hover:text-white hover:pl-2 transition-all duration-300 block">Welfare Fund</a></li>
+                        <li><a href="https://rag.ju45th.com" target="_blank" class="hover:text-ju-red hover:pl-2 transition-all duration-300 block font-bold text-ju-red/80">RAG 45 <i class="fas fa-external-link-alt text-[10px] ml-1"></i></a></li>
+                        <li><a href="login.html" class="hover:text-white hover:pl-2 transition-all duration-300 block">Member Login</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter & Social (Span 4 Cols) -->
+                <div class="md:col-span-4">
+                    <h4 class="text-white font-bold text-[10px] uppercase tracking-[0.2em] mb-6">Stay Connected</h4>
+                    <div class="relative group mb-8">
+                        <input type="email" placeholder="Enter email address" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-4 text-sm text-white focus:outline-none focus:border-ju-gold/50 focus:bg-white/10 transition-all placeholder-gray-600">
+                        <button class="absolute right-2 top-2 bottom-2 bg-ju-gold text-ju-charcoal px-4 rounded-md font-bold text-xs hover:bg-white transition-colors">JOIN</button>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/45batch.ju" target="_blank" class="w-12 h-12 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center text-gray-400 hover:bg-[#1877F2] hover:text-white hover:border-transparent hover:-translate-y-1 transition-all duration-300 shadow-lg"><i class="fab fa-facebook-f text-lg"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center text-gray-400 hover:bg-[#0077B5] hover:text-white hover:border-transparent hover:-translate-y-1 transition-all duration-300 shadow-lg"><i class="fab fa-linkedin-in text-lg"></i></a>
+                        <a href="mailto:contact@ju45th.com" class="w-12 h-12 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center text-gray-400 hover:bg-ju-red hover:text-white hover:border-transparent hover:-translate-y-1 transition-all duration-300 shadow-lg"><i class="fas fa-envelope text-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest text-gray-600 font-medium">
+                <div class="flex items-center gap-2">
+                    <span>&copy; 2026 JU 45th Batch.</span>
+                    <span class="hidden md:inline text-gray-700">|</span>
+                    <a href="#" class="hover:text-gray-400 transition-colors">Privacy</a>
+                    <span class="text-gray-700">•</span>
+                    <a href="#" class="hover:text-gray-400 transition-colors">Terms</a>
+                </div>
+                
+                <!-- The Signature Block -->
+<a href="https://nexus-portfolio-nine.vercel.app" target="_blank" class="group flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 hover:border-ju-gold/30 transition-all duration-300">
+    <span class="font-mono text-ju-gold/70 group-hover:text-ju-gold">&lt;/&gt;</span>
+    <span class="text-gray-500 group-hover:text-gray-300">Crafted with philosophy by</span>
+    <span class="text-gray-300 font-bold group-hover:text-ju-gold group-hover:underline decoration-ju-gold underline-offset-4">@saazidhossain</span>
+</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 100, duration: 800, easing: 'ease-out-cubic' });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+
+        function toggleMenu() {
+            if (mobileMenu.classList.contains('translate-x-full')) {
+                mobileMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        if(menuBtn) menuBtn.addEventListener('click', toggleMenu);
+        if(closeMenuBtn) closeMenuBtn.addEventListener('click', toggleMenu);
+
+        // Gemini API Logic
+        const apiKey = "AIzaSyAl8ihQjDOdsh3wayUUKBq-FwfFVdE9Ld0"; // Set by environment, left empty for now
+
+        async function callGeminiAPI(type) {
+            let prompt = "";
+            let inputVal = "";
+            let resultDiv = document.getElementById(`result-${type}`);
+            let loader = document.getElementById(`loader-${type}`);
+
+            if (type === 'memory') {
+                inputVal = document.getElementById('memory-input').value;
+                prompt = `Rewrite this raw memory into a nostalgic, poetic caption in a mix of Bangla and English (Banglish) suitable for a university alumni group. Keep it short. Memory: "${inputVal}"`;
+            } else if (type === 'event') {
+                inputVal = document.getElementById('event-input').value;
+                prompt = `Plan a mini reunion event based on this idea: "${inputVal}". Provide a catchy Title, 3-point Itinerary, and a Food Menu (campus style). Keep it brief.`;
+            } else if (type === 'bio') {
+                inputVal = document.getElementById('bio-role').value;
+                prompt = `Write a short 2-line professional yet nostalgic bio for a university directory. Role: ${inputVal}. Mention Jahangirnagar University vibe.`;
+            }
+
+            if (!inputVal) { alert("Please enter some text!"); return; }
+
+            // UI State: Loading
+            loader.classList.remove('hidden');
+            resultDiv.classList.add('hidden');
+
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+                });
+
+                const data = await response.json();
+                const text = data.candidates[0].content.parts[0].text;
+
+                // UI State: Success
+                resultDiv.innerText = text;
+                resultDiv.classList.remove('hidden');
+            } catch (error) {
+                console.error(error);
+                alert("AI is taking a nap. Please try again later.");
+            } finally {
+                loader.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
